@@ -184,6 +184,6 @@ This project is a **realistic full-stack product prototype**:
 - Reflects **privacy, consent, and AI** principles  
 - Showcases **architecture, scalability, DevOps, and product thinking**
 
-**Author:** [Rahul Satav](https://www.linkedin.com/in/satavprajakta)  
+**Author:** [Prajakta Satav](https://www.linkedin.com/in/prajakta-satav110)  
 **Role:** Full Stack Developer — Java | Spring Boot | React | SQL  
 **Focus:** Scalable, privacy-centric, AI-enabled digital products.
