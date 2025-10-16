@@ -3,9 +3,6 @@
 A privacy-driven LinkedIn Profile Analyzer designed as a **Full Stack micro-product** demonstrating end-to-end ownership — from **React UI** to **Spring Boot backend**, **PostgreSQL database**, and **Dockerized deployment**.  
 It aligns with **Hushh.ai’s mission** of building consent-based, privacy-first, AI-enabled platforms.
 
-🔗 **Live Demo:** [https://rahul-satav.github.io/LinkedIn-Profile-Score/](https://rahul-satav.github.io/LinkedIn-Profile-Score/)  
-📦 **Repo:** [https://github.com/Rahul-satav/LinkedIn-Profile-Score](https://github.com/Rahul-satav/LinkedIn-Profile-Score)
-
 ---
 
 ## 🧠 Tech Stack (Languages, Frameworks, Versions)
@@ -48,6 +45,7 @@ It aligns with **Hushh.ai’s mission** of building consent-based, privacy-first
 │ • Build → Test → Deploy     │
 │ • Monitored via Prometheus  │
 └─────────────────────────────┘
+
 ```
 
 **Highlights:**
@@ -180,6 +178,6 @@ This project is a **realistic full-stack product prototype**:
 - Reflects **privacy, consent, and AI** principles  
 - Showcases **architecture, scalability, DevOps, and product thinking**
 
-**Author:** [Rahul Satav](https://www.linkedin.com/in/rahul-satav)  
+**Author:** [Rahul Satav](https://www.linkedin.com/in/satavprajakta)  
 **Role:** Full Stack Developer — Java | Spring Boot | React | SQL  
 **Focus:** Scalable, privacy-centric, AI-enabled digital products.
