@@ -100,7 +100,7 @@ function analyze(){
 $("analyze").addEventListener("click", analyze);
 
 $("demo").addEventListener("click", () => {
-  $("name").value = "Rahul Satav";
+  $("name").value = "Prajakta Satav";
   $("headline").value = "Full‑Stack Developer (Angular + Spring Boot) — Building scalable microservices on AWS";
   $("about").value = "Full‑stack engineer with 6+ years experience building high‑impact products. Led migration to Angular 17 and Spring Boot microservices, improving performance by 40%. Designed CI/CD pipelines, containerized services with Docker & Kubernetes, and implemented cost optimization saving 25%. Passionate about clean architecture, testing, and mentoring junior devs. Open to new opportunities.";
   $("experience").value = "- Built microservice architecture for payments; reduced latency by 32%\n- Led a team of 5 to deliver Angular 17 SPA with lazy loading\n- Migrated monolith to Spring Boot + PostgreSQL on AWS\n- Implemented CI/CD with GitHub Actions, Docker, and Helm";
