@@ -47,10 +47,10 @@ It aligns with **Hushh.ai’s mission** of building consent-based, privacy-first
 └─────────────────────────────┘
 
 ```
-System Architecture 1
+**System Architecture 1**
 ![System Architecture 1](https://github.com/user-attachments/assets/18f26968-2930-494f-8e1d-434f4f5058d7)
 
-System Architecture 2
+**System Architecture 2**
 ![System Architecture 2](https://github.com/user-attachments/assets/95c23208-6d83-4df5-af29-8796d93e988e)
 
  ---
