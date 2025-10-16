@@ -1,7 +1,5 @@
-/* LinkedIn blue/white theme */
 :root{
   --blue:#0A66C2;
-  --blue-2:#004182;
   --bg:#f3f6f9;
   --text:#1f2328;
   --muted:#6b7280;
@@ -9,14 +7,20 @@
   --danger:#e11d48;
 }
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
 .container{max-width:1100px;margin:auto;padding:20px}
 .header{display:flex;justify-content:space-between;align-items:center}
 .brand{display:flex;gap:14px;align-items:center}
 .logo{width:56px;height:56px;object-fit:contain;border-radius:12px;border:1px solid #e5e7eb;background:#fff}
 h1{margin:0;font-size:clamp(22px,4vw,34px)}
 .sub{margin:0;color:var(--muted)}
-.gh{color:#fff;background:var(--blue);padding:8px 12px;border-radius:10px;text-decoration:none;border:1px solid var(--blue-2)}
+.gh{color:#fff;background:var(--blue);padding:8px 12px;border-radius:10px;text-decoration:none;border:1px solid #004182}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media (max-width:900px){.grid{grid-template-columns:1fr}}
 .card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(2,6,23,.06)}
@@ -27,11 +31,10 @@ textarea{resize:vertical}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
 .btn{background:#fff;border:1px solid #d1d5db;border-radius:12px;padding:10px 14px;cursor:pointer}
-.btn.primary{background:var(--blue);border-color:var(--blue-2);color:#fff}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
 .btn.danger{background:var(--danger);border-color:#be123c;color:#fff}
 .btn:hover{transform:translateY(-1px)}
 .muted{color:var(--muted);font-size:12px;margin-top:6px}
-/* Score meter */
 .score-wrap{display:flex;align-items:center;gap:12px;margin:6px 0 10px}
 .score-meter{flex:1;height:14px;background:#e5e7eb;border-radius:9999px;overflow:hidden;border:1px solid #d1d5db}
 .meter{height:100%;width:0%;background:linear-gradient(90deg,#22c55e,var(--blue));transition:width .4s ease}
@@ -39,4 +42,20 @@ textarea{resize:vertical}
 .breakdown{font-size:14px;color:#111827;display:grid;gap:6px}
 .breakdown .row{display:flex;justify-content:space-between;border-bottom:1px dashed #e5e7eb;padding:4px 0}
 .suggestions{line-height:1.5}
-.footer{text-align:center;color:#64748b;font-size:14px;margin-top:10px}
+.settings{margin-top:8px;padding:8px;border:1px dashed #e5e7eb;border-radius:10px}
+.badge-wrap{margin-top:12px}
+.badge{width:280px;padding:16px;text-align:center;border-radius:12px;background:linear-gradient(180deg,#fff,#f7fbff);border:1px solid #e6eefc}
+.badge h3{margin:0;font-size:18px}
+.badge p{margin:6px 0 0 0;color:#334155}
+.hidden{display:none}
+
+/* History & leaderboard */
+.history{display:grid;gap:8px;max-height:220px;overflow:auto;padding:6px 0}
+.history .hist-item{display:flex;justify-content:space-between;align-items:center;border:1px solid #e6eefc;padding:8px;border-radius:10px;background:#fff}
+.hist-meta{font-size:13px;color:#334155}
+.hist-actions{display:flex;gap:8px}
+.leaderboard{margin-top:8px;border-radius:10px;padding:8px;background:#fff;border:1px solid #e6eefc}
+.leader-row{display:flex;justify-content:space-between;padding:8px;border-bottom:1px dashed #eef3fb;cursor:pointer}
+.leader-row:last-child{border-bottom:none}
+.leader-name{font-weight:600}
+.leader-score{font-weight:800;color:var(--blue)}
