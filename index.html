@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>LinkedIn Profile Score / Analyzer</title>
-  <meta name="description" content="A lightweight, client-side LinkedIn profile scoring tool. Paste your profile text and get a score with suggestions.">
+  <title>LinkedIn Profile Score</title>
+  <meta name="description" content="LinkedIn profile analyzer with AI-improve, keyword optimizer, radar chart, shareable badge, suggestions copy, badge history and leaderboard.">
   <link rel="stylesheet" href="style.css"/>
   <link rel="icon" href="logo.png">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
   <header class="container header">
     <div class="brand">
       <img src="logo.png" alt="Logo" class="logo"/>
       <div>
-        <h1>LinkedIn Profile Score</h1>
-        <p class="sub">Analyze your profile and get instant suggestions — client‑side, no data uploaded.</p>
+        <h1>LinkedIn Profile Score <small>v3</small></h1>
+        <p class="sub">AI Headline • Keyword optimizer • Skill Radar • Shareable Badge • Copy suggestions • Badge History • Leaderboard</p>
       </div>
     </div>
     <a class="gh" href="https://github.com/" target="_blank" rel="noopener">★ Star this project</a>
@@ -30,9 +32,15 @@
         </div>
         <div>
           <label>Headline</label>
-          <input id="headline" placeholder="e.g., Full-Stack Developer (JAVA + MERN STACK) | Building scalable apps"/>
+          <input id="headline" placeholder="e.g., Full-Stack Developer (java + MERN Stack)"/>
         </div>
       </div>
+
+      <div>
+        <label>Target Job Title (for keyword optimization)</label>
+        <input id="targetJob" placeholder="e.g., Frontend Developer, DevOps Engineer"/>
+      </div>
+
       <div>
         <label>About / Summary</label>
         <textarea id="about" rows="6" placeholder="Paste your LinkedIn About section here..."></textarea>
@@ -40,22 +48,28 @@
 
       <div>
         <label>Experience (bullet points are great)</label>
-        <textarea id="experience" rows="6" placeholder="- Built X that improved Y by Z%
-- Led a team of 4 engineers
-- Migrated legacy app to Angular 17 + Spring Boot"></textarea>
+        <textarea id="experience" rows="6" placeholder="- Built X\n- Led Y"></textarea>
       </div>
 
       <div>
         <label>Skills (comma-separated)</label>
-        <input id="skills" placeholder="Angular, Java, Spring Boot, Microservices, AWS, Docker"/>
+        <input id="skills" placeholder="Angular, Java, Spring Boot, AWS"/>
       </div>
 
       <div class="actions">
         <button id="analyze" class="btn primary">Analyze</button>
+        <button id="improveHeadline" class="btn">✨ Improve Headline (AI)</button>
+        <button id="keywordCheck" class="btn">🔎 Keyword Optimize</button>
         <button id="demo" class="btn">Fill Demo Data</button>
         <button id="clear" class="btn danger">Clear</button>
       </div>
-      <p class="muted">Tip: You can paste from your resume or profile. This tool runs entirely in your browser.</p>
+
+      <p class="muted">Tip: For AI improve — enter your OpenAI API key (optional). No profile data is sent anywhere except when you call the AI (client-side fetch).</p>
+
+      <details class="settings"><summary>Settings (optional)</summary>
+        <label>OpenAI API Key (optional): <input id="openaiKey" placeholder="sk-..." type="password"></label>
+        <small class="muted">If you provide a key, the tool will call OpenAI's Chat Completion endpoint to rewrite headlines. Keep your key secret.</small>
+      </details>
     </section>
 
     <section class="card">
@@ -66,21 +80,51 @@
         </div>
         <div class="score-num"><span id="score">0</span>/100</div>
       </div>
+
       <div id="breakdown" class="breakdown"></div>
       <hr/>
-      <h3>Suggestions</h3>
+      <h3>Suggestions <button id="copySug" class="btn">📋 Copy all</button></h3>
       <ul id="suggestions" class="suggestions"></ul>
+
+      <hr/>
+      <h3>Skill Radar</h3>
+      <canvas id="radarChart" width="300" height="300"></canvas>
+
       <div class="actions">
         <button id="save" class="btn">Save Result (Local)</button>
         <button id="export" class="btn">Export JSON</button>
+        <button id="badgeBtn" class="btn">🎖️ Generate Shareable Badge</button>
+      </div>
+
+      <div id="badgeWrap" class="badge-wrap hidden">
+        <div id="badge" class="badge card">
+          <h3 id="badgeName">Name</h3>
+          <p id="badgeScore">Score: 0/100</p>
+          <p id="badgeLine">Improve your profile — try these tips!</p>
+        </div>
+        <div class="actions" style="margin-top:8px;">
+          <button id="downloadBadge" class="btn primary">Download Badge PNG</button>
+          <button id="saveBadgeHistory" class="btn">💾 Save Badge to History</button>
+        </div>
+      </div>
+
+      <hr/>
+      <h3>Badge History</h3>
+      <div id="badgeHistory" class="history"></div>
+
+      <hr/>
+      <h3>Leaderboard (Top saved)</h3>
+      <div id="leaderboard" class="leaderboard"></div>
+      <div style="margin-top:10px;">
+        <button id="clearHistory" class="btn danger">Clear All Saved Data</button>
       </div>
     </section>
   </main>
 
   <footer class="container footer">
-    <p>© 2025 LinkedIn Profile Score — Static HTML/CSS/JS • Theme: LinkedIn Blue</p>
+    <p>© 2025 LinkedIn Profile Score</p>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app-v3.js"></script>
 </body>
 </html>
