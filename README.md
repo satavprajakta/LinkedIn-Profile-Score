@@ -45,11 +45,15 @@ It aligns with **Hushh.ai’s mission** of building consent-based, privacy-first
 │ • Build → Test → Deploy     │
 │ • Monitored via Prometheus  │
 └─────────────────────────────┘
-![System Architecture 1](https://github.com/user-attachments/assets/ea66ef22-dbdf-436b-9b76-b6f58b0986b2)
-![System Architecture 2](https://github.com/user-attachments/assets/8a530af4-92d8-4217-bc40-cd8fd3f2a6c4)
 
 ```
+System Architecture 1
+![System Architecture 1](https://github.com/user-attachments/assets/18f26968-2930-494f-8e1d-434f4f5058d7)
 
+System Architecture 2
+![System Architecture 2](https://github.com/user-attachments/assets/95c23208-6d83-4df5-af29-8796d93e988e)
+
+ ---
 **Highlights:**
 - Privacy-by-design → all user data analyzed only with consent.  
 - Scalable architecture → modular REST APIs and microservices.  
