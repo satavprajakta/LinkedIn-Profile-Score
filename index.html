@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>LinkedIn Profile Score / Analyzer</title>
+  <meta name="description" content="A lightweight, client-side LinkedIn profile scoring tool. Paste your profile text and get a score with suggestions.">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png">
+</head>
+<body>
+  <header class="container header">
+    <div class="brand">
+      <img src="logo.png" alt="Logo" class="logo"/>
+      <div>
+        <h1>LinkedIn Profile Score</h1>
+        <p class="sub">Analyze your profile and get instant suggestions — client‑side, no data uploaded.</p>
+      </div>
+    </div>
+    <a class="gh" href="https://github.com/" target="_blank" rel="noopener">★ Star this project</a>
+  </header>
+
+  <main class="container grid">
+    <section class="card">
+      <h2>Profile Input</h2>
+      <div class="grid-2">
+        <div>
+          <label>Full Name</label>
+          <input id="name" placeholder="e.g., Rahul Satav"/>
+        </div>
+        <div>
+          <label>Headline</label>
+          <input id="headline" placeholder="e.g., Full-Stack Developer (Angular + Spring Boot) | Building scalable apps"/>
+        </div>
+      </div>
+      <div>
+        <label>About / Summary</label>
+        <textarea id="about" rows="6" placeholder="Paste your LinkedIn About section here..."></textarea>
+      </div>
+
+      <div>
+        <label>Experience (bullet points are great)</label>
+        <textarea id="experience" rows="6" placeholder="- Built X that improved Y by Z%
+- Led a team of 4 engineers
+- Migrated legacy app to Angular 17 + Spring Boot"></textarea>
+      </div>
+
+      <div>
+        <label>Skills (comma-separated)</label>
+        <input id="skills" placeholder="Angular, Java, Spring Boot, Microservices, AWS, Docker"/>
+      </div>
+
+      <div class="actions">
+        <button id="analyze" class="btn primary">Analyze</button>
+        <button id="demo" class="btn">Fill Demo Data</button>
+        <button id="clear" class="btn danger">Clear</button>
+      </div>
+      <p class="muted">Tip: You can paste from your resume or profile. This tool runs entirely in your browser.</p>
+    </section>
+
+    <section class="card">
+      <h2>Score</h2>
+      <div class="score-wrap">
+        <div class="score-meter">
+          <div id="meter" class="meter"></div>
+        </div>
+        <div class="score-num"><span id="score">0</span>/100</div>
+      </div>
+      <div id="breakdown" class="breakdown"></div>
+      <hr/>
+      <h3>Suggestions</h3>
+      <ul id="suggestions" class="suggestions"></ul>
+      <div class="actions">
+        <button id="save" class="btn">Save Result (Local)</button>
+        <button id="export" class="btn">Export JSON</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>© 2025 LinkedIn Profile Score — Static HTML/CSS/JS • Theme: LinkedIn Blue</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
